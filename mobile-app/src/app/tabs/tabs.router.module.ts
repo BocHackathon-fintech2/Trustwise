@@ -6,6 +6,11 @@ import { HomePage } from '../home/home.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
 
+import { LoansPage } from './../loans/loans.page';
+import { LendsPage } from './../lends/lends.page';
+import { WalletPage } from './../wallet/wallet.page';
+
+
 const routes: Routes = [
   {
     path: 'tabs',
@@ -30,6 +35,21 @@ const routes: Routes = [
         path: 'contact',
         outlet: 'contact',
         component: ContactPage
+      },
+      {
+        path: 'wallet',
+        outlet: 'wallet',
+        component: WalletPage
+      },
+      {
+        path: 'loans',
+        outlet: 'loans',
+        component: LoansPage
+      },
+      {
+        path: 'lends',
+        outlet: 'lends',
+        component: LendsPage
       }
     ]
   },

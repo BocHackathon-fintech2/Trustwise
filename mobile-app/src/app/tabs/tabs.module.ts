@@ -11,6 +11,11 @@ import { ContactPageModule } from '../contact/contact.module';
 import { AboutPageModule } from '../about/about.module';
 import { HomePageModule } from '../home/home.module';
 
+import { LendsPageModule } from './../lends/lends.module';
+import { LoansPageModule } from './../loans/loans.module';
+import { WalletPageModule } from './../wallet/wallet.module';
+
+
 @NgModule({
   imports: [
     IonicModule,
@@ -19,7 +24,10 @@ import { HomePageModule } from '../home/home.module';
     TabsPageRoutingModule,
     HomePageModule,
     AboutPageModule,
-    ContactPageModule
+    ContactPageModule,
+    WalletPageModule,
+    LoansPageModule,
+    LendsPageModule
   ],
   declarations: [TabsPage]
 })
