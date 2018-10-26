@@ -14,13 +14,17 @@ export class LendsPage implements OnInit {
   }
 
   items = [
-    'Loan 1',
-    'Loan 2',
+    'Lend 1',
+    'Lend 2',
   ];
 
   itemSelected(item: string) {
     console.log("Selected Item", item);
     this.router.navigateByUrl('tabs/(lends:lend/' + item + ')');
+  }
+
+  createLend() {
+    this.router.navigateByUrl('create-lend');
   }
 
 }
