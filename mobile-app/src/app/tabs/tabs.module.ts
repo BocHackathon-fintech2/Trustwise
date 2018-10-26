@@ -14,6 +14,7 @@ import { HomePageModule } from '../home/home.module';
 import { LendsPageModule } from './../lends/lends.module';
 import { LoansPageModule } from './../loans/loans.module';
 import { WalletPageModule } from './../wallet/wallet.module';
+import { ContractPageModule } from './../contract/contract.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { WalletPageModule } from './../wallet/wallet.module';
     ContactPageModule,
     WalletPageModule,
     LoansPageModule,
-    LendsPageModule
+    LendsPageModule,
+    ContractPageModule
   ],
   declarations: [TabsPage]
 })

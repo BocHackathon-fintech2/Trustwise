@@ -9,6 +9,7 @@ import { ContactPage } from '../contact/contact.page';
 import { LoansPage } from './../loans/loans.page';
 import { LendsPage } from './../lends/lends.page';
 import { WalletPage } from './../wallet/wallet.page';
+import { ContractPage } from '../contract/contract.page';
 
 
 const routes: Routes = [
@@ -47,10 +48,20 @@ const routes: Routes = [
         component: LoansPage
       },
       {
+        path: 'loan/:id',
+        outlet: 'loans',
+        component: ContractPage
+      },
+      {
         path: 'lends',
         outlet: 'lends',
         component: LendsPage
-      }
+      },
+      {
+        path: 'lend/:id',
+        outlet: 'lends',
+        component: ContractPage
+      },
     ]
   },
   {
