@@ -7,7 +7,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label>Use Address</ion-label>
-    <ion-select [(ngModel)]="selectedAddress" ok-text="Okay" cancel-text="Dismiss">
+    <ion-select [(ngModel)]="selectedAddress" ok-text="Okay" cancel-text="Dismiss" (ionChange)="selectAddress()">
       <ion-select-option *ngFor="let address of addresses">{{ address }}</ion-select-option>
     </ion-select>
   </ion-item>
