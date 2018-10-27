@@ -19,20 +19,20 @@
     <ion-item>
       <ion-label>Loaner Address</ion-label>
       <ion-button (click)="scanLoanerAddress()"><ion-icon name="qr-scanner"></ion-icon></ion-button>
-      <ion-input [(ngModel)]="contract.loaner" type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.loaner" type="text" text-right></ion-input>    <!-- placeholder="Loaner Address" -->
     </ion-item>
     <ion-item>
       <ion-label>Box Address</ion-label>
       <ion-button (click)="scanBoxAddress()"><ion-icon name="qr-scanner" text-right></ion-icon></ion-button>
-      <ion-input [(ngModel)]="contract.vaultAddress" type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.vaultAddress" type="text" text-right></ion-input>   <!-- placeholder="Loaner Address" -->
     </ion-item>
     <ion-item>
       <ion-label>Loan Amount</ion-label>
-      <ion-input [(ngModel)]="contract.amountToLoan" type="number" min="0" step="0.0000000000000000001" placeholder="1.5" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.amountToLoan" type="number" min="0" step="0.0000000000000000001" text-right></ion-input>   <!-- placeholder="1.5" -->
     </ion-item>
     <ion-item>
       <ion-label>Payback Amount</ion-label>
-      <ion-input [(ngModel)]="contract.paybackAmount" type="number" min="0" step="0.0000000000000000001" placeholder="1.8" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.paybackAmount" type="number" min="0" step="0.0000000000000000001" text-right></ion-input>    <!-- placeholder="1.8" -->
     </ion-item>
     <ion-item>
       <ion-label text-left>Contract End Date</ion-label>

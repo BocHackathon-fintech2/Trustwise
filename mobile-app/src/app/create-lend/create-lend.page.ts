@@ -25,13 +25,16 @@ export class CreateLendPage implements OnInit {
 
   current_date = null;
   current_year = null;
+  current_time = null;
 
   constructor(private barcodeScanner: BarcodeScanner, private storage: Storage, private router: Router) { }
 
   ngOnInit() {
     this.current_date = new Date().toISOString();
     this.current_year = new Date().getFullYear();
+    this.current_time = new Date().toLocaleTimeString().substr(0, 5);
     this.contract.deadlineDate = this.current_date;
+    this.contract.deadlineTime = this.current_time;
     console.log(collateral.extraCondition())
     this.storage.get('account').then(account => {
       if (account) {

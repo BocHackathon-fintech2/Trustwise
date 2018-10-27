@@ -25,7 +25,6 @@ export class WalletPage extends RouterPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
     this.addresses = w3.eth.accounts;
     this.addresses.splice(this.addresses.indexOf('0x00335edfc7ee8195ce528c24597d622b12293965'), 1);
     this.storage.get('account').then(account => {
@@ -52,7 +51,7 @@ export class WalletPage extends RouterPage implements OnInit, OnDestroy {
     console.log('In selectAddress');
     console.log(this.selectedAddress);
     this.storage.set('account', this.selectedAddress);
-    
+    this.balance = w3.eth.getBalance(this.selectedAddress);
   }
 
 }

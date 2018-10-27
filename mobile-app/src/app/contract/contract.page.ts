@@ -17,6 +17,10 @@ export class ContractPage extends RouterPage implements OnInit, OnDestroy {
   lend = false;
   state = ''
 
+  refresherEnabled = false;
+
+  // refreshContentIntervalHandler = null;
+
   contract = {
     broker: null,
     loaner: null,
@@ -41,6 +45,7 @@ export class ContractPage extends RouterPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.refreshContent();
+    // this.refreshContentIntervalHandler = setInterval(() => { this.refreshContent() }, 2000);
   }
 
   onEnter() {
@@ -48,6 +53,7 @@ export class ContractPage extends RouterPage implements OnInit, OnDestroy {
   }
 
   onDestroy() {
+    // clearInterval(this.refreshContentIntervalHandler);
     super.ngOnDestroy();
   }
 
@@ -79,6 +85,14 @@ export class ContractPage extends RouterPage implements OnInit, OnDestroy {
     if (this.state == 'Available') {
       this.router.navigateByUrl('/tabs/(wallet:wallet)');
     }
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.refreshContent();
+    this.refresherEnabled = false;
+    console.log(refresher.detail.complete);
+    refresher.detail.complete();
   }
 
   agreeOnConditions() {

@@ -9,6 +9,9 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)" [disabled]="false">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-item>
       <ion-icon *ngIf="lend" name="hand-holding-usd-solid" style="font-size: 7em; margin: 0 auto; padding-bottom: 0.25em;"></ion-icon>
@@ -50,11 +53,6 @@
     <ion-button *ngIf="(lend && (state=='Expired'))" expand="full" shape="round" (click)="unlock()">Unlock Box</ion-button>
     <ion-button *ngIf="loan && (state=='Confirmed')" expand="full" shape="round" (click)="pay()">Pay</ion-button>
     <ion-button *ngIf="(state=='Initialized' || state=='AgreedAndLocked')" expand="full" shape="round" (click)="cancel()">Cancel</ion-button>
-    <!-- <ion-item *ngIf="loan && state=='Confirmed'">
-      <ion-label>Amount</ion-label>
-      <ion-input required type="number" min="0" step="0.0000000000000000001" placeholder="0.3" text-right></ion-input>
-      <ion-button shape="round" padding size="default" (click)="pay()">Pay</ion-button>
-    </ion-item> -->
 
   </ion-list>
 </ion-content>
