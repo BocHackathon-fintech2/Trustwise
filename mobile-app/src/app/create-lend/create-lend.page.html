@@ -8,5 +8,38 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <ion-label>Lender Address</ion-label>
+      <ion-input type="text" placeholder="Loaner Address" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Loaner Address</ion-label>
+      <ion-input type="text" placeholder="Loaner Address" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Box Address</ion-label>
+      <ion-input type="text" placeholder="Loaner Address" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Loan Amount</ion-label>
+      <ion-input type="number" min="0" step="0.0000000000000000001" placeholder="1.5" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Payback Amount</ion-label>
+      <ion-input type="number" min="0" step="0.0000000000000000001" placeholder="1.8" text-right></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label text-left>Contract End Date</ion-label>
+      <ion-datetime required placeholder="Full Payback Date" display-format="MM/DD/YYYY" text-right></ion-datetime>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+        <ion-button center expand="full" shape="round">Create</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
