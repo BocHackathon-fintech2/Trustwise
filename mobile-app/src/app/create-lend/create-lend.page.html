@@ -18,11 +18,13 @@
     </ion-item>
     <ion-item>
       <ion-label>Loaner Address</ion-label>
-      <ion-input type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-button (click)="scanLoanerAddress()"><ion-icon name="qr-scanner"></ion-icon></ion-button>
+      <ion-input [(ngModel)]="loanerAddress" type="text" placeholder="Loaner Address" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Box Address</ion-label>
-      <ion-input type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-button (click)="scanBoxAddress()"><ion-icon name="qr-scanner" text-right></ion-icon></ion-button>
+      <ion-input [(ngModel)]="boxAddress" type="text" placeholder="Loaner Address" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Loan Amount</ion-label>
@@ -34,7 +36,7 @@
     </ion-item>
     <ion-item>
       <ion-label text-left>Contract End Date</ion-label>
-      <ion-datetime required placeholder="Full Payback Date" display-format="MM/DD/YYYY" text-right></ion-datetime>
+      <ion-datetime required [(ngModel)]=selected_date placeholder="Full Payback Date" display-format="DD/MM/YYYY" [min]="current_year" max="2100" text-right></ion-datetime>
     </ion-item>
   </ion-list>
 </ion-content>
