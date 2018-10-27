@@ -16,38 +16,44 @@
     </ion-item>
     <ion-item>
       <ion-label>Lender Address</ion-label>
-      <ion-input type="text" placeholder="Loaner Address" text-right readonly></ion-input>
+      <ion-input [(ngModel)]="contract.broker" type="text" placeholder="Loaner Address" text-right readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Loaner Address</ion-label>
-      <ion-input type="text" placeholder="Loaner Address" text-right readonly></ion-input>
+      <ion-input [(ngModel)]="contract.loaner" type="text" placeholder="Loaner Address" text-right readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Box Address</ion-label>
-      <ion-input type="text" placeholder="Loaner Address" text-right readonly></ion-input>
+      <ion-input [(ngModel)]="contract.vaultAddress" type="text" placeholder="Loaner Address" text-right readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Loan Amount</ion-label>
-      <ion-input type="number" min="0" step="0.0000000000000000001" placeholder="1.5" text-right readonly></ion-input>
+      <ion-input [(ngModel)]="contract.amountToLoan" type="number" min="0" step="0.0000000000000000001" placeholder="1.5" text-right readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Payback Amount</ion-label>
-      <ion-input type="number" min="0" step="0.0000000000000000001" placeholder="1.8" text-right readonly></ion-input>
+      <ion-input [(ngModel)]="contract.paybackAmount" type="number" min="0" step="0.0000000000000000001" placeholder="1.8" text-right readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label text-left>Contract End Date</ion-label>
-      <ion-input type="text" placeholder="01/01/1970" text-right readonly></ion-input>
+      <ion-input [(ngModel)]="contract.deadlineDate" type="text" placeholder="01/01/1970" text-right readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label text-left>Contract End Time</ion-label>
+      <ion-input [(ngModel)]="contract.deadlineTime" type="text" placeholder="02:00" text-right readonly></ion-input>
     </ion-item>
 
-    <ion-button *ngIf="true || loan && (state=='created')" shape="round" expand="full">Agree and Sign</ion-button>
-    <ion-button *ngIf="true || lend && (state=='locked')" shape="round" expand="full">Sign</ion-button>
-    <ion-button *ngIf="true || lend && (state=='missed')" expand="full" shape="round">Unlock Box</ion-button>
-    <ion-button *ngIf="true || loan && (state=='completed' || state=='broken')" shape="round" expand="full">Unlock Box</ion-button>
-    <ion-item *ngIf="true || loan && state=='execution'">
+    <!-- ['Canceled', 'Available', 'Initialized', 'AgreedAndLocked', 'Confirmed', 'LoanFulfilled'] -->
+    <ion-button *ngIf="loan && (state=='Initialized')" shape="round" expand="full" (click)="agreeOnConditions()">Agree on Conditions</ion-button>
+    <ion-button *ngIf="lend && (state=='AgreedAndLocked')" shape="round" expand="full" (click)="confirm()">Confirm</ion-button>
+    <ion-button *ngIf="(loan && ((state=='LoanFulfilled') || (state=='Canceled')))" expand="full" shape="round" (click)="unlock()">Unlock Box</ion-button>
+    <ion-button *ngIf="(lend && (state=='Expired'))" expand="full" shape="round" (click)="unlock()">Unlock Box</ion-button>
+    <ion-button *ngIf="loan && (state=='Confirmed')" expand="full" shape="round" (click)="pay()">Pay</ion-button>
+    <!-- <ion-item *ngIf="loan && state=='Confirmed'">
       <ion-label>Amount</ion-label>
       <ion-input required type="number" min="0" step="0.0000000000000000001" placeholder="0.3" text-right></ion-input>
-      <ion-button shape="round" padding size="default">Pay</ion-button>
-    </ion-item>
-    
+      <ion-button shape="round" padding size="default" (click)="pay()">Pay</ion-button>
+    </ion-item> -->
+
   </ion-list>
 </ion-content>
