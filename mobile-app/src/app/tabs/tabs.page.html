@@ -11,10 +11,21 @@
   <ion-tab label="Wallet" icon="contacts" href="/tabs/(wallet:wallet)">
     <ion-router-outlet name="wallet"></ion-router-outlet>
   </ion-tab>
-  <ion-tab label="Loans" icon="contacts" href="/tabs/(loans:loans)">
+  <ion-tab label="Loans" icon="hand-holding-solid" href="/tabs/(loans:loans)">
     <ion-router-outlet name="loans"></ion-router-outlet>
   </ion-tab>
   <ion-tab label="Lends" icon="hand-holding-usd-solid" href="/tabs/(lends:lends)">
     <ion-router-outlet name="lends"></ion-router-outlet>
   </ion-tab>
+
+<!-- 
+  <ion-tab (click)="walletClicked()" label="Wallet" icon="contacts" href="/tabs/(wallet:wallet)">
+    <ion-router-outlet name="wallet"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab (click)="loansClicked()" label="Loans" icon="contacts" href="/tabs/(loans:loans)">
+    <ion-router-outlet name="loans"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab (click)="lendsClicked()" label="Lends" icon="hand-holding-usd-solid" href="/tabs/(lends:lends)">
+    <ion-router-outlet name="lends"></ion-router-outlet>
+  </ion-tab> -->
 </ion-tabs>

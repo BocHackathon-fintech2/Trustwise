@@ -4,4 +4,4 @@ const abi = [{"constant":false,"inputs":[],"name":"loanFulfill","outputs":[],"pa
 
 // export const w3 = new Web3(new Web3.providers.HttpProvider("http://raspberrypi.local:8545"))
 export const w3 = new Web3(new Web3.providers.HttpProvider("http://192.168.88.160:8545"))
-export const collateral = w3.eth.contract(abi).at("0x9f65472bfdA7EF1aee16114f82ccE8252418789d")
+export const collateral = w3.eth.contract(abi).at("0x855DFeD6df01B9d18C21aEE2ADe7bEF2D36240B6")

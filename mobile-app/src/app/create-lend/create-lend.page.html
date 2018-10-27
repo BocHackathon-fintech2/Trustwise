@@ -14,29 +14,33 @@
     </ion-item>
     <ion-item>
       <ion-label>Lender Address</ion-label>
-      <ion-input type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.broker" type="text" placeholder="Loaner Address" text-right readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Loaner Address</ion-label>
       <ion-button (click)="scanLoanerAddress()"><ion-icon name="qr-scanner"></ion-icon></ion-button>
-      <ion-input [(ngModel)]="loanerAddress" type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.loaner" type="text" placeholder="Loaner Address" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Box Address</ion-label>
       <ion-button (click)="scanBoxAddress()"><ion-icon name="qr-scanner" text-right></ion-icon></ion-button>
-      <ion-input [(ngModel)]="boxAddress" type="text" placeholder="Loaner Address" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.vaultAddress" type="text" placeholder="Loaner Address" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Loan Amount</ion-label>
-      <ion-input type="number" min="0" step="0.0000000000000000001" placeholder="1.5" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.amountToLoan" type="number" min="0" step="0.0000000000000000001" placeholder="1.5" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Payback Amount</ion-label>
-      <ion-input type="number" min="0" step="0.0000000000000000001" placeholder="1.8" text-right></ion-input>
+      <ion-input [(ngModel)]="contract.paybackAmount" type="number" min="0" step="0.0000000000000000001" placeholder="1.8" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label text-left>Contract End Date</ion-label>
-      <ion-datetime required [(ngModel)]=selected_date placeholder="Full Payback Date" display-format="DD/MM/YYYY" [min]="current_year" max="2100" text-right></ion-datetime>
+      <ion-datetime required [(ngModel)]="contract.deadlineDate" placeholder="Full Payback Date" display-format="DD/MM/YYYY" [min]="current_year" max="2100" text-right></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label text-left>Contract End Time</ion-label>
+      <ion-datetime required [(ngModel)]="contract.deadlineTime" placeholder="Full Payback Time" display-format="HH:mm" text-right></ion-datetime>
     </ion-item>
   </ion-list>
 </ion-content>
@@ -44,7 +48,7 @@
 <ion-footer>
   <ion-row>
     <ion-col>
-        <ion-button center expand="full" shape="round" (click)="test()">Create</ion-button>
+        <ion-button center expand="full" shape="round" (click)="createContract()">Create</ion-button>
     </ion-col>
   </ion-row>
 </ion-footer>
