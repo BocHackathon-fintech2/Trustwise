@@ -1,6 +1,7 @@
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Component, OnInit } from '@angular/core';
-import { w3 } from '../web3/w3.js';
+import { w3, collateral } from '../web3/w3.js';
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: 'app-create-lend',
@@ -16,7 +17,7 @@ export class CreateLendPage implements OnInit {
 
   selected_date = null;
 
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  constructor(private barcodeScanner: BarcodeScanner, private storage: Storage) { }
 
   ngOnInit() {
     this.current_date = new Date().toISOString();
@@ -39,6 +40,17 @@ export class CreateLendPage implements OnInit {
   test() {    
     console.log(w3.eth.accounts);
     w3.eth.sendTransaction({from: "0xe414D4b9b33C5C00fc173dCc8f07d7607faFA6c7", to: "0xe414D4b9b33C5C00fc173dCc8f07d7607faFA6c7", value: 100})
+    console.log(collateral);
+    
+    console.log(collateral.extraCondition())
+    this.storage.get('account').then(account => {
+      if (account) {
+        console.log(account);
+        collateral.fireExtraCondition.sendTransaction({from: account})
+        console.log(collateral.extraCondition())
+      }
+    });
+
         
   }
 
