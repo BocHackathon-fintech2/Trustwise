@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contract',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContractPage implements OnInit {
 
-  constructor() { }
+  loan = false;
+  lend = false;
+  state = ''
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    let current_url = window.location.href;
+    this.loan = current_url.includes(':loan');
+    this.lend = current_url.includes(':lend');
   }
 
 }
