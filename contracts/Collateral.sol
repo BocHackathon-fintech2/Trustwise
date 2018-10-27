@@ -41,6 +41,10 @@ contract Collateral {
     uint256 public paybackAmount;
 
     bool public extraCondition;
+
+    constructor () public {
+        vaultState = States.Available;
+    }
     
     function initializeCollateral (
         address _loaner, 
