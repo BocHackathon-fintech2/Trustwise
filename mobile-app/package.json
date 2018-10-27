@@ -37,7 +37,7 @@
     "phonegap-plugin-barcodescanner": "8.0.0",
     "ionic": "^4.2.1",
     "rxjs": "6.2.2",
-    "web3": "^0.20.5",
+    "web3": "0.20.5",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
