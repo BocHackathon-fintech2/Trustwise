@@ -133,4 +133,18 @@ export class ContractPage extends RouterPage implements OnInit, OnDestroy {
       }
     }); 
   }
+
+  cancel() {
+    this.storage.get('account').then(account => {
+      if (account) {
+        let res = collateral.cancel.sendTransaction(
+          {
+            from: account
+          })
+        console.log(res);
+        this.refreshContent();
+      }
+    }); 
+  }
+
 }

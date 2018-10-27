@@ -49,6 +49,7 @@
     <ion-button *ngIf="(loan && ((state=='LoanFulfilled') || (state=='Canceled')))" expand="full" shape="round" (click)="unlock()">Unlock Box</ion-button>
     <ion-button *ngIf="(lend && (state=='Expired'))" expand="full" shape="round" (click)="unlock()">Unlock Box</ion-button>
     <ion-button *ngIf="loan && (state=='Confirmed')" expand="full" shape="round" (click)="pay()">Pay</ion-button>
+    <ion-button *ngIf="(state=='Initialized' || state=='AgreedAndLocked')" expand="full" shape="round" (click)="cancel()">Cancel</ion-button>
     <!-- <ion-item *ngIf="loan && state=='Confirmed'">
       <ion-label>Amount</ion-label>
       <ion-input required type="number" min="0" step="0.0000000000000000001" placeholder="0.3" text-right></ion-input>
