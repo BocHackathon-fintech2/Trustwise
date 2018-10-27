@@ -1,0 +1,11 @@
+[ui]
+force = true
+
+[parity]
+chain = "/home/pi/.local/share/io.parity.ethereum/dev-chain.json"
+
+[account]
+#populate with account(s) to unlock
+unlock = [""]
+#should contain password(s) to account(s) above
+password = ["/home/pi/.local/share/io.parity.ethereum/pass"]
