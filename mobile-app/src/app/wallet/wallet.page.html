@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>wallet</ion-title>
+    <ion-title>Wallet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-item>
+    <ion-label>Use Address</ion-label>
+    <ion-select [(ngModel)]="selectedAddress" ok-text="Okay" cancel-text="Dismiss">
+      <ion-select-option *ngFor="let address of addresses">{{ address }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card>
+    <ion-card-content>
+      Selected Address
+    </ion-card-content>
+    <ngx-qrcode [qrc-value]="selectedAddress"></ngx-qrcode>
+  </ion-card>
 </ion-content>

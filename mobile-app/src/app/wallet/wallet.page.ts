@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WalletPage implements OnInit {
 
+  addresses = [
+    'address1',
+    'address2'
+  ]
+  selectedAddress;
+
   constructor() { }
 
   ngOnInit() {
