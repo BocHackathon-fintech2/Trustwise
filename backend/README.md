@@ -30,6 +30,6 @@
     ```
 6. restart the pi!
     ```
-    sudo shutdown -r now
+    sudo reboot
     ```
     
