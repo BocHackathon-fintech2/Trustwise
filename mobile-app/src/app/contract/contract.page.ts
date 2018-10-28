@@ -92,7 +92,11 @@ export class ContractPage extends RouterPage implements OnInit, OnDestroy {
     this.refreshContent();
     this.refresherEnabled = false;
     console.log(refresher.detail.complete);
-    refresher.detail.complete();
+    // refresher.detail.complete();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.detail.complete();
+    }, 500);
   }
 
   agreeOnConditions() {
