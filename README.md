@@ -15,3 +15,9 @@ If the loaner pays back before the deadline then the loaner can finally unlock t
 If the loaner fails to pay before the deadline then, after the deadline, the lender can unlock the vault and aquire the collateral item.
 
 The vault could be stand-alone or even provided by a bank/post-office
+
+## How to set it up
+
+Check the *README.md* files for:
+* backend: [backend/README.md](https://github.com/BocHackathon-fintech2/Trustwise/blob/master/backend/README.md)
+* mobile-app: [mobile-app/READMY.md](https://github.com/BocHackathon-fintech2/Trustwise/blob/master/mobile-app/README.md)
