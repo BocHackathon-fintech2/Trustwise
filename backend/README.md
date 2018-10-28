@@ -12,42 +12,24 @@
     git clone https://github.com/BocHackathon-fintech2/Trustwise.git
     cd Trustwise/backend
     ```
-2. install `python3`, `pip`, `gpiozero`  
+2. run the `backend-setup` script
     ```
-    sudo apt-get update && sudo apt-get install python3 pyton3-pip python3-gpiozero
+    bash ./backend-setup.sh
     ```
-3. install `web3` library
+3. unlock the parity account (replace `AccountPassword` with the accounts password)
     ```
-    sudo pip3 install web3
-    ```
-4. install `parity`
-    ```
-    sudo wget https://releases.parity.io/v1.11.11/armv7-unknown-linux-gnueabihf/parity -O /usr/bin/parity
-    sudo chmod +x /usr/bin/parity
-    mkdir -p ~/.local/share/io.parity.ethereum/
-    ```
-5. create a new parity account and unlock it
-    ```
-    parity account new
     echo "AccountPassword" > /home/pi/.local/share/io.parity.ethereum/pass
     ```
-6. set parity as a daemon
-    ```
-    sudo cp parity.service /etc/systemd/system/parity.service
-    ```
-7. set the parity configuration
-    ```
-    cp config.toml ~/.local/share/io.parity.ethereum/config.toml
-    ```
-8. modify line #9 in parity configuration with your newly created account
+4. modify line #9 in parity configuration with your newly created account
     ```
     editor ~/.local/share/io.parity.ethereum/config.toml
     ```
-9. set the genesis-block specification
-    ```
-    cp dev-chain.json > /home/pi/.local/share/io.parity.ethereum/dev-chain.json
-    ```
-10. modify the genesis-block specification on line #143 with your newly created address
+5. modify line #143 in the genesis-block specification with your newly created address
     ```
     editor /home/pi/.local/share/io.parity.ethereum/dev-chain.json
     ```
+6. restart the pi!
+    ```
+    sudo reboot
+    ```
+    
