@@ -104,7 +104,7 @@ contract Collateral {
         if ((vaultState == States.Cancelled) || (vaultState == States.LoanFulfilled)) {
             require(msg.sender == loaner, "Message sender should be loaner");
             makeAvailbale();
-        } else if (vaultState == States.AgreedAndLocked) {
+        } else if (vaultState == States.Confirmed) {
             require((now > deadlineTimestamp) || extraCondition, "Timestamp should be later than deadlineTimestamp or extraCondition");
             require(msg.sender == broker, "Message sender should be broker");
             makeAvailbale();
